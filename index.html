@@ -4,44 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guessing Game</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<style>
-    .hidden{
-     display: none;
-    }
-</style>
 <body>
+    <div class="main">
     <div class="container">
-        <p>Guess a number 1 to 100.</p>
+        <h1>Guess a number 1 to 100.</h1>
+      <div class="inputBox">
         <input type="text" placeholder="enter a number">
         <button onclick="fn()">Summit</button>
+    </div>
         <p id="result"></p>
         <button onclick="toggleHint()">hint</button>
         <p id="hint" class="hidden"></p>
     </div>
-    <script>
-        
-        const randomNumber = Math.floor(Math.random() * 100) + 1;
-            console.log(randomNumber);
-        function fn() {
-            let userNumber=parseInt(document.querySelector('input').value);
-             let resultDisplay= document.getElementById('result');
-            if(randomNumber==userNumber){
-                resultDisplay.textContent="Congratulations! You guessed the correct number!";
-                console.log("Congratulations! You guessed the correct number!");
-            }else{
-                resultDisplay.textContent="You Lose ! Play again ";
-            }
-        }
-        function toggleHint() {
-            let hintDisplay = document.getElementById('hint');
-            hintDisplay.classList.toggle('hidden');
-            if (hintDisplay.classList.contains('hidden')) {
-                hintDisplay.textContent = ""; 
-            } else {
-                hintDisplay.textContent = "The correct number is " + randomNumber;  
-            }
-        }
-    </script>
+</div>
+    <script src="./script.js"></script>
 </body>
 </html>
